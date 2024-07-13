@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0e4d7;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+        }
+        #no:hover {
+            background-color: #e57373;
+        }
+        #yes:hover {
+            background-color: #45a049;
+        }
+        #message {
+            display: none;
+            color: #ff69b4;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function clickNo() {
+            const noButton = document.getElementById('no');
+            noButton.style.position = 'absolute';
+            noButton.style.top = Math.random() * (window.innerHeight - noButton.clientHeight) + 'px';
+            noButton.style.left = Math.random() * (window.innerWidth - noButton.clientWidth) + 'px';
+        }
+
+        function clickYes() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('buttons').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres ser mi novia?</h1>
+        <div id="buttons">
+            <button id="yes" onclick="clickYes()">Sí</button>
+            <button id="no" onclick="clickNo()">No</button>
+        </div>
+        <div id="message">
+            <h2>¡Sabía que sí querías!</h2>
+        </div>
+    </div>
+</body>
+</html>
